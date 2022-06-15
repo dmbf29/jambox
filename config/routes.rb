@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :bookmarks do
-    member do
-      post :like
+  resources :bookmarks, only: [:index]
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :bookmarks do
+        member do
+          post :like
+        end
+      end
     end
   end
 end
