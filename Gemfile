@@ -29,6 +29,7 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # Custom Added
+gem 'acts-as-taggable-on'
 gem 'acts_as_votable'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'devise'
