@@ -34,6 +34,7 @@ gem 'acts_as_votable'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'devise'
 gem 'font-awesome-sass', '~> 5.6.1'
+gem 'pundit'
 gem 'simple_form', github: 'heartcombo/simple_form'
 
 group :development, :test do  gem 'pry-byebug'
