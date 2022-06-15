@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :albums, through: :bookmarks
   has_many :artists, through: :albums
+  has_one_attached :photo
   acts_as_voter
 end
