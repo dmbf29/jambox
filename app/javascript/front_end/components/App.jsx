@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import Title from './Title';
 
 const App = () => {
 
   return (
     <div>
-      <h1>Hello!</h1>
+      <Title />
     </div>
   );
 };
