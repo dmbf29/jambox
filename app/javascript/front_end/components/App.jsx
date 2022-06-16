@@ -4,12 +4,16 @@ import Tags from './Tags';
 
 const App = (props) => {
   const { initialState } = props;
-  console.log(initialState);
+  const allTags = [];
+  initialState.bookmarks.forEach((bookmark) => {
+    bookmark.tag_list.forEach(tag => allTags.push(tag))
+  });
+  const tags = [...new Set(allTags)];
 
   return (
     <div>
       <Title />
-      <Tags bookmarks={initialState.bookmarks} />
+      <Tags tags={tags} />
     </div>
   );
 };

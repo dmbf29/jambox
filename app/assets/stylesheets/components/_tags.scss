@@ -1,26 +1,20 @@
 .tag-item {
   display: inline-block;
+  span {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8rem;
+    border-radius: 50rem;
+    padding: 0.1rem 0.5rem;
+    background-color: $red;
+    color: $light;
+    border: 1px solid $red;
+    margin-right: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
 }
 
 .tag-selector {
   position: absolute;
   transform: scale(0);
-}
-
-.tag-selector+label {
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.7rem;
-  border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
-  background-color: $orange;
-  color: $red;
-  border: 1px solid $red;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
-}
-
-.tag-selector:checked+label {
-  background-color: $red;
-  color: $light;
 }
