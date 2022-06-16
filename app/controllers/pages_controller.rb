@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   private
 
   def check_signed_in
-    redirect_to bookings_path if signed_in?
+    redirect_to bookmarks_path if signed_in?
   end
 end

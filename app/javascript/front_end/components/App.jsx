@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import Title from './Title';
 import Tags from './Tags';
 
-const App = () => {
+const App = (props) => {
+  const { initialState } = props;
+  console.log(initialState);
 
   return (
     <div>
       <Title />
-      <Tags />
+      <Tags bookmarks={initialState.bookmarks} />
     </div>
   );
 };
