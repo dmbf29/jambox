@@ -1,11 +1,11 @@
 import React from 'react';
 
 const List = (props) => {
-  const { list } = props;
+  const { name, bookmarks } = props;
 
   return (
     <div className="container my-3">
-      <h3>{ list.name }</h3>
+      <h3>{ name }</h3>
     </div>
   );
 };
