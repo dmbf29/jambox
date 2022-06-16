@@ -10,7 +10,8 @@ $body-bg:                 $dark;
 $font-size-base: 1rem;
 
 // Colors
-$body-color: $gray;
+$body-color: $light;
+$headings-color: $orange;
 $primary:    $blue;
 $success:    $green;
 $info:       $yellow;
@@ -23,4 +24,3 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
-$body-color: $light;
