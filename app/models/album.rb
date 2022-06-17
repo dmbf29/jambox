@@ -8,7 +8,7 @@ class Album < ApplicationRecord
     {
       id: id,
       name: name,
-      release_date: photo,
+      release_date: release_date,
       photo: Cloudinary::Utils.cloudinary_url(photo.key),
       artist_name: artist.name
     }
