@@ -20,6 +20,10 @@
   display: flex;
 }
 
+.navbar-bottom {
+  flex-shrink: 0;
+}
+
 // Smallest device
 // @media (min-width: 100px) and (max-width: 575px) {
 // }
