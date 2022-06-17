@@ -9,8 +9,7 @@
 }
 
 .card-product img {
-  height: 100%;
-  width: 100%;
+  width: 104px;
   object-fit: cover;
 }
 
@@ -36,7 +35,14 @@
   width: 100%;
   overflow: scroll;
   height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+    background: transparent;
+  }
 }
+
 
 
 // Smallest device
@@ -55,6 +61,9 @@
 @media (min-width: 768px) {
   .card-product {
     min-width: 200px;
+  }
+  .card-product img {
+    width: 200px;
   }
 }
 
