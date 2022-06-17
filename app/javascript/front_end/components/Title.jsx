@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Title = (props) => {
+  const { name } = props;
   return (
     <div className="container mt-3">
-      <h1>Get Groovin'</h1>
+      <h1>{ name }</h1>
     </div>
   );
 };

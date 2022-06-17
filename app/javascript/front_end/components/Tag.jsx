@@ -2,10 +2,11 @@ import React from 'react';
 
 const Tag = (props) => {
   const { tag } = props;
+  const url = `/bookmarks?tag=${ tag }`;
 
   return (
     <div className="tag-item">
-      <span>{ tag }</span>
+      <a href={ url }><span>{ tag }</span></a>
     </div>
   );
 };

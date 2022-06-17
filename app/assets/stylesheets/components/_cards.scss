@@ -6,6 +6,19 @@
   align-items: center;
   flex-direction: column;
   min-width: 104px;
+  position: relative;
+}
+
+.bookmark-count {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border-radius: 8px;
+  background-color: $orange;
+  color: $red;
+  padding: 2px 8px;
+  font-size: 0.8em;
+  opacity: 0.9;
 }
 
 .card-product img {
@@ -14,9 +27,12 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-product p {
@@ -25,10 +41,14 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-product .card-product-infos {
   padding: 4px;
+  width: 100%;
 }
 
 .scroll-cards {
@@ -65,12 +85,18 @@
   .card-product img {
     width: 200px;
   }
+  .card-product h2 {
+    font-size: 14px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .card-product .card-product-infos {
     padding: 16px;
+  }
+  .card-product h2 {
+    font-size: 16px;
   }
 }
 

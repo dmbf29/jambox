@@ -7,6 +7,6 @@ class Bookmark < ApplicationRecord
   accepts_nested_attributes_for :album
 
   def attributes
-    { id: nil, tag_list: nil, album: nil }
+    { id: nil, tag_list: nil, album: nil, cached_votes_total: nil }
   end
 end

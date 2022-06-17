@@ -6,7 +6,8 @@ window.initReact = () => {
   const container = document.getElementById('root');
   const initialState = {
     bookmarks: JSON.parse(container.dataset.bookmarks),
-    user: JSON.parse(container.dataset.user)
+    user: JSON.parse(container.dataset.user),
+    tag: container.dataset.tag
   };
 
   if (container) {

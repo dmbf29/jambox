@@ -2,35 +2,58 @@ import React, { useState } from 'react';
 import Title from './Title';
 import Tags from './Tags';
 import List from './List';
+import Bookmarks from './Bookmarks';
 
 const App = (props) => {
   const { initialState } = props;
+  const tag = initialState.tag
   const allTags = [];
   initialState.bookmarks.forEach((bookmark) => {
     bookmark.tag_list.forEach(tag => allTags.push(tag))
   });
   const tags = [...new Set(allTags)];
+  const bookmarks = initialState.bookmarks
   const lists = [
     {
       name: 'Go-to Albums',
-      bookmarks: initialState.bookmarks
+      bookmarks: bookmarks
     },
     {
       name: 'Recently Listened',
-      bookmarks: initialState.bookmarks
+      bookmarks: bookmarks
     },
     {
       name: 'Newly Added',
-      bookmarks: initialState.bookmarks
+      bookmarks: bookmarks
     }
   ]
+  function bookmarkRender(bookmarks, tag) {
+    return (
+      <div>
+        <Title name={tag} />
+        <Bookmarks bookmarks={bookmarks} key={tag + '1'} />
+      </div>
+    );
+  };
+
+  function listRender(lists, tags) {
+    return (
+      <div>
+        <Title name="Get Groovin'" />
+        <Tags tags={tags} />
+        { lists.map(
+          (list, index) => <List name={list.name} key={index} bookmarks={list.bookmarks} />
+        )}
+      </div>
+    );
+  };
 
   return (
     <div>
-      <Title />
-      <Tags tags={tags} />
-      { lists.map(
-        (list, index) => <List name={list.name} key={index} bookmarks={list.bookmarks} />
+      { tag !== '' ? (
+        bookmarkRender(bookmarks, tag)
+      ) : (
+        listRender(lists, tags)
       )}
     </div>
   );
