@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $dark;
+  background: $purple;
   color: $light;
   .nav-link-custom {
     color: $light !important;
@@ -22,10 +22,18 @@
 
 .navbar-bottom {
   display: flex;
-}
-
-.navbar-bottom {
   flex-shrink: 0;
+  .link-large {
+    font-size: 1.5em !important;
+  }
+  .btn-music {
+    padding: 4px !important;
+    background-color: $dark !important;
+    border-radius: 6px !important;
+    border: 1px solid $light;
+    width: 40px;
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+  }
 }
 
 // Smallest device
