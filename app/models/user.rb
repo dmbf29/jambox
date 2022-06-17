@@ -10,6 +10,7 @@ class User < ApplicationRecord
   acts_as_voter
 
   def self.find_for_spotify_oauth(request)
+    # RSpotify::authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
     user_params = {
       provider: 'spotify',

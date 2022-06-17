@@ -9,7 +9,8 @@ class Bookmark < ApplicationRecord
   def attributes
     {
       id: id,
-      tag_list: tag_list
+      tag_list: tag_list,
+      album: album.attributes
     }
   end
 end

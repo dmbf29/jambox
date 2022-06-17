@@ -23,30 +23,40 @@ circles = Album.create!(
   release_date: Date.parse('January 17, 2020'),
   artist: mac
 )
+file = URI.open('https://i.scdn.co/image/ab67616d0000b27326b7dd89810cc1a40ada642c')
+circles.photo.attach(io: file, filename: 'album.png', content_type: 'image/png')
 
 swimming = Album.create!(
   name: 'Swimming',
   release_date: Date.parse('August 3, 2018'),
   artist: mac
 )
+file = URI.open('https://i.scdn.co/image/ab67616d0000b273175c577a61aa13d4fb4b6534')
+swimming.photo.attach(io: file, filename: 'album.png', content_type: 'image/png')
 
 tuxedo_one_album = Album.create!(
   name: 'Tuxedo',
   release_date: Date.parse('March 3, 2015'),
   artist: tuxedo
 )
+file = URI.open('https://i.scdn.co/image/ab67616d0000b2730771a97700015a50f73f14e3')
+tuxedo_one_album.photo.attach(io: file, filename: 'album.png', content_type: 'image/png')
 
 tuxedo_two_album = Album.create!(
   name: 'Tuxedo II',
   release_date: Date.parse('March 24, 2017'),
   artist: tuxedo
 )
+file = URI.open('https://i.scdn.co/image/ab67616d0000b273504fb7fb29f2f72ec3e12ab1')
+tuxedo_two_album.photo.attach(io: file, filename: 'album.png', content_type: 'image/png')
 
 tuxedo_three_album = Album.create!(
   name: 'Tuxedo III',
   release_date: Date.parse('Jul 19, 2019'),
   artist: tuxedo
 )
+file = URI.open('https://i.scdn.co/image/ab67616d0000b273687bbe97b3ed0d0e6199ddee')
+tuxedo_three_album.photo.attach(io: file, filename: 'album.png', content_type: 'image/png')
 
 puts "...created #{Album.count} albums."
 
