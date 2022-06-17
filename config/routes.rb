@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       end
     end
   end
+  get '/auth/spotify/callback', to: 'users#spotify'
 end
