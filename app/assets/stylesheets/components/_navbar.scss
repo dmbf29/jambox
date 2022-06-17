@@ -11,3 +11,37 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-top {
+  display: none;
+}
+
+.navbar-bottom {
+  display: flex;
+}
+
+// Smallest device
+// @media (min-width: 100px) and (max-width: 575px) {
+// }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .navbar-top {
+      display: flex;
+    }
+    .navbar-bottom {
+      display: none;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }
