@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 200px;
+  min-width: 104px;
 }
 
 .card-product img {
@@ -29,5 +29,41 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 4px;
 }
+
+.scroll-cards {
+  width: 100%;
+  overflow: scroll;
+}
+
+
+// Smallest device
+// @media (min-width: 100px) and (max-width: 575px) {
+
+// }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .card-product .card-product-infos {
+    padding: 8px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .card-product {
+    min-width: 200px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .card-product .card-product-infos {
+    padding: 16px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }

@@ -7,7 +7,7 @@ const List = (props) => {
   return (
     <div className="container my-3">
       <h3>{ name }</h3>
-      <div className="d-flex">
+      <div className="d-flex scroll-cards">
         { bookmarks.map(
           (bookmark) => <Bookmark key={bookmark.id} bookmark={bookmark} />
         )}
