@@ -30,8 +30,8 @@ const App = (props) => {
       <Title />
       <Tags tags={tags} />
       { lists.map(
-          (list, index) => <List name={list.name} key={index} bookmarks={list.bookmarks} />
-        )}
+        (list, index) => <List name={list.name} key={index} bookmarks={list.bookmarks} />
+      )}
     </div>
   );
 };

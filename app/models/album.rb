@@ -6,11 +6,15 @@ class Album < ApplicationRecord
 
   def attributes
     {
-      id: id,
-      name: name,
-      release_date: release_date,
-      photo: Cloudinary::Utils.cloudinary_url(photo.key),
-      artist_name: artist.name
+      id: nil,
+      name: nil,
+      release_date: nil,
+      photo_url: photo_url,
+      artist: nil
     }
+  end
+
+  def photo_url
+    Cloudinary::Utils.cloudinary_url(photo.key)
   end
 end
