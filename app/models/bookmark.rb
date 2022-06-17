@@ -2,6 +2,7 @@ class Bookmark < ApplicationRecord
   include ActiveModel::Serialization
   belongs_to :user
   belongs_to :album
+  validates :album, uniqueness: { scope: :user }
   acts_as_votable
   acts_as_taggable_on :tags
   accepts_nested_attributes_for :album

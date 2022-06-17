@@ -15,7 +15,7 @@ const App = (props) => {
   const bookmarks = initialState.bookmarks
   const lists = [
     {
-      name: 'Go-to Albums',
+      name: 'All time favorites',
       bookmarks: bookmarks
     },
     {
