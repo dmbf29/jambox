@@ -12,7 +12,7 @@ class User < ApplicationRecord
   acts_as_voter
 
   def tag_list
-    tags.pluck(:name)
+    tags.pluck(:name).uniq
   end
 
   def self.find_for_spotify_oauth(request)
