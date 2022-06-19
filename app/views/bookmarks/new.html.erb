@@ -28,10 +28,11 @@
             </div>
           <% end %>
         </fieldset>
-        <%= f.input :name, as: :hidden, input_html: { data: { album_add_target: 'name' } } %>
+        <%= f.input :name, as: :hidden, input_html: { data: { album_add_target: 'album_name' } } %>
         <%= f.input :release_date, as: :hidden, input_html: { data: { album_add_target: 'release_date' } } %>
         <%= f.input :spotify_id, as: :hidden, input_html: { data: { album_add_target: 'spotify_id' } } %>
         <%= f.simple_fields_for :artist do |art_form| %>
+          <%= art_form.input :name, as: :hidden, input_html: { data: { album_add_target: 'artist_name' } } %>
         <% end %>
         <%= f.submit 'Add Album', class: 'btn btn-primary' %>
       <% end %>

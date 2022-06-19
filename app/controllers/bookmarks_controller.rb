@@ -16,7 +16,7 @@ class BookmarksController < ApplicationController
   def new
     @bookmark = Bookmark.new
     @album = Album.new
-    @album.artist
+    @album.build_artist
     authorize @bookmark
   end
 end

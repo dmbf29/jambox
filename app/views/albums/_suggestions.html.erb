@@ -2,7 +2,8 @@
   <% albums.each do |album| %>
     <div class="card-product mx-2"
       data-action="click->album-add#fillForm"
-      data-name="<%= album.name %>"
+      data-album-name="<%= album.name %>"
+      data-artist-name="<%= album.artists&.first&.name %>"
       data-spotify-id="<%= album.id %>"
       data-release-date="<%= album.release_date %>"
       data-album-add-target="card"
