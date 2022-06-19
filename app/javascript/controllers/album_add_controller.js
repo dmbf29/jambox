@@ -7,6 +7,7 @@ export default class extends Controller {
     "album_name",
     "spotify_id",
     "release_date",
+    "photo_url",
     "card",
   ];
 
@@ -23,6 +24,7 @@ export default class extends Controller {
     this.album_nameTarget.value = event.currentTarget.dataset.albumName;
     this.artist_nameTarget.value = event.currentTarget.dataset.artistName;
     this.spotify_idTarget.value = event.currentTarget.dataset.spotifyId;
+    this.photo_urlTarget.value = event.currentTarget.dataset.photoUrl;
     this.release_dateTarget.value = event.currentTarget.dataset.releaseDate;
   }
 }

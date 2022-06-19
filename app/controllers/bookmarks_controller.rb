@@ -19,4 +19,5 @@ class BookmarksController < ApplicationController
     @album.build_artist
     authorize @bookmark
   end
+
 end

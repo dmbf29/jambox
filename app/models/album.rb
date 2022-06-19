@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class Album < ApplicationRecord
   belongs_to :artist
   has_many :bookmarks, dependent: :destroy
@@ -13,6 +15,11 @@ class Album < ApplicationRecord
       photo_url: photo_url,
       artist: nil
     }
+  end
+
+  def upload_photo(url)
+    file = URI.open(url)
+    photo.attach(io: file, filename: 'album.png', content_type: 'image/png')
   end
 
   def photo_url
