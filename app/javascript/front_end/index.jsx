@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
 
-// window.initReact = () => {
+
 const initReact = () => {
   const container = document.getElementById('root');
   console.log(container.dataset)
@@ -21,5 +21,5 @@ const initReact = () => {
     root.render(<App initialState={initialState} />);
   }
 }
-// window.initReact();
+
 export { initReact }
