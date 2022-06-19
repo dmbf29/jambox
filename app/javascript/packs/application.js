@@ -7,11 +7,11 @@ import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
-import "../front_end";
+// import "../front_end";
 
-document.addEventListener("turbolinks:load", () => {
-  window.initReact();
-});
+// document.addEventListener("turbolinks:load", () => {
+//   window.initReact();
+// });
 
 Rails.start();
 Turbolinks.start();
