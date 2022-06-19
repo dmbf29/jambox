@@ -23,15 +23,20 @@
   <div class="row mt-3">
     <div class="col">
       <%= simple_form_for @album, html: { class: 'd-none', data: { album_add_target: 'form' }} do |f| %>
-        <fieldset class="form-group check_boxes optional snippet_tags">
-          <input type="hidden" name="tags[]" value="" />
-          <% current_user.tag_list.each do |tag| %>
-            <div class="tag-item">
-              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="tags][]" id="snippet_tag_ids_<%= tag %>">
-              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_<%= tag %>"><%= tag %></label>
-            </div>
-          <% end %>
-        </fieldset>
+        <div class="mb-3 string optional album_tag_list">
+          <label class="form-label string optional" for="album_tag_list">Add tags</label>
+          <fieldset class="form-group check_boxes optional snippet_tags">
+            <input type="hidden" name="tags[]" value="" />
+            <% current_user.tag_list.each do |tag| %>
+              <div class="tag-item">
+                <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="<%= tag %>" name="tags][]" id="snippet_tag_ids_<%= tag %>">
+                <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_<%= tag %>"><%= tag %></label>
+              </div>
+            <% end %>
+          </fieldset>
+          <input class="form-control string optional mt-2 border-purple" type="text" value="" name="tag_list" id="album_tag_list">
+          <div class="form-text">Or add your tags, separated by commas</div>
+        </div>
         <%= f.input :name, as: :hidden, input_html: { data: { album_add_target: 'album_name' } } %>
         <%= f.input :release_date, as: :hidden, input_html: { data: { album_add_target: 'release_date' } } %>
         <%= f.input :spotify_id, as: :hidden, input_html: { data: { album_add_target: 'spotify_id' } } %>
@@ -39,7 +44,7 @@
         <%= f.simple_fields_for :artist do |art_form| %>
           <%= art_form.input :name, as: :hidden, input_html: { data: { album_add_target: 'artist_name' } } %>
         <% end %>
-        <%= f.submit 'Add Album', class: 'btn btn-primary' %>
+        <%= f.submit 'Add', class: 'btn btn-warning' %>
       <% end %>
     </div>
   </div>

@@ -12,7 +12,12 @@ class AlbumsController < ApplicationController
     if @album.save
       @album.upload_photo(params[:album][:photo_url])
       @bookmark = Bookmark.create(user: current_user, album: @album)
-      @bookmark.tag_list.add(params[:tags]) if params[:tags].any?
+      # params[:tags].each do |tag|
+      #   @bookmark.tag_list.add(tag) unless tag.blank?
+      # end
+      @bookmark.tag_list.add(params[:tags]) if params[:tags].present?
+      @bookmark.tag_list.add(params[:tag_list], parse: true) if params[:tag_list].present?
+      @bookmark.save
       redirect_to bookmarks_path
     else
       render 'bookings/new'
