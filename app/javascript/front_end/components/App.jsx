@@ -16,15 +16,19 @@ const App = (props) => {
   const lists = [
     {
       name: 'All time favorites',
-      bookmarks: bookmarks
+      bookmarks: initialState.favs
     },
     {
-      name: 'Recently Listened',
-      bookmarks: bookmarks
+      name: 'Been a While',
+      bookmarks: initialState.throwBacks
     },
     {
       name: 'Newly Added',
-      bookmarks: bookmarks
+      bookmarks: initialState.newOnes
+    },
+    {
+      name: 'Recently Listened',
+      bookmarks: initialState.recents
     }
   ]
   function bookmarkRender(bookmarks, tag) {

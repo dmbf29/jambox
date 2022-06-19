@@ -1,6 +1,11 @@
 <div id="root"
   data-bookmarks="<%= @bookmarks %>"
+  data-favs="<%= @favs %>"
+  data-new-ones="<%= @new_ones %>"
+  data-throw-backs="<%= @throw_backs %>"
+  data-recents="<%= @recents %>"
   data-tag="<%= @tag&.capitalize %>"
   data-user="<%= current_user.to_json %>"
 >
 </div>
+<%# Add Stimulus to connect to React! %>

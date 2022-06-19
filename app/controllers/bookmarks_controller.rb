@@ -4,7 +4,12 @@ class BookmarksController < ApplicationController
       @bookmarks = policy_scope(Bookmark).tagged_with(params[:tag]).includes(:album).to_json
       @tag = params[:tag]
     else
-      @bookmarks = policy_scope(Bookmark).includes(:album).to_json
+      @bookmarks = policy_scope(Bookmark).includes(:album)
+      @favs = @bookmarks.order(cached_votes_total: :desc).to_json
+      @new_ones = @bookmarks.order(created_at: :desc).to_json
+      @throw_backs = @bookmarks.order(cached_votes_total: :asc).to_json
+      @recents = @bookmarks.order(updated_at: :desc).to_json
+      @bookmarks = @bookmarks.to_json
     end
   end
 end
