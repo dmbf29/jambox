@@ -3,12 +3,16 @@
     <div class="col">
       <h1>Add Album</h1>
       <%= form_tag search_albums_path, remote: true, method: :get do %>
-        <%= text_field_tag :query,
+        <div class="search-form-control form-group">
+          <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Search for artist or album"
           %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+          <button name="button" type="submit" class="btn btn-warning">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
       <% end %>
     </div>
   </div>
