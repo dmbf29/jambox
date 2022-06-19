@@ -8,6 +8,6 @@ export default class extends Controller {
   }
 
   fillForm(event) {
-    console.los(this.formTarget);
+    this.formTarget.classList.remove("d-none");
   }
 }
