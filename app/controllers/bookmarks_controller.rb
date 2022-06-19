@@ -12,4 +12,9 @@ class BookmarksController < ApplicationController
       @bookmarks = @bookmarks.to_json
     end
   end
+
+  def new
+    @bookmark = Bookmark.new
+    authorize @bookmark
+  end
 end

@@ -5,4 +5,8 @@ class BookmarkPolicy < ApplicationPolicy
       user.bookmarks
     end
   end
+
+  def new?
+    true
+  end
 end
