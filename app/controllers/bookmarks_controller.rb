@@ -2,6 +2,10 @@ class BookmarksController < ApplicationController
   def index
     if params[:tag].present?
       @bookmarks = policy_scope(Bookmark).tagged_with(params[:tag]).includes(:album).to_json
+      @favs = [].to_json
+      @new_ones = [].to_json
+      @throw_backs = [].to_json
+      @recents = [].to_json
       @tag = params[:tag]
     else
       @bookmarks = policy_scope(Bookmark).includes(:album)
