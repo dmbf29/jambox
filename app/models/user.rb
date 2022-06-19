@@ -4,11 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bookmarks
+  has_many :taggings, through: :bookmarks
+  has_many :tags, through: :taggings
   has_many :albums, through: :bookmarks
   has_many :artists, through: :albums
   has_one_attached :photo
   acts_as_voter
-  acts_as_tagger
+
+  def tag_list
+    tags.pluck(:name)
+  end
 
   def self.find_for_spotify_oauth(request)
     # RSpotify::authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])

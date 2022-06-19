@@ -21,7 +21,7 @@
       <%= simple_form_for @album do |f| %>
         <fieldset className="form-group check_boxes optional snippet_tags">
           <input type="hidden" name="tags[tag_ids][]" value="" />
-          <% current_user.owned_tags.each do |tag| %>
+          <% current_user.tag_list.each do |tag| %>
             <div className="tag-item">
               <span><%= tag %></span>
             </div>
