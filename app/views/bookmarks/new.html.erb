@@ -2,7 +2,7 @@
   <div class="row mt-5">
     <div class="col">
       <h1>Add Album</h1>
-      <%= form_tag search_artists_path, remote: true, method: :get do %>
+      <%= form_tag search_albums_path, remote: true, method: :get do %>
         <%= text_field_tag :query,
             params[:query],
             class: "form-control",
@@ -14,6 +14,10 @@
         <%#= f.simple_fields_for :album do |d_form| %>
           <%# end %>
           <%# end %>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col" id='album-suggestions'>
         </div>
       </div>
     </div>

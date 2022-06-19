@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :bookmarks, only: [:index, :new]
-  resources :artists, only: [] do
+  resources :albums, only: [] do
     collection do
       get :search
     end
