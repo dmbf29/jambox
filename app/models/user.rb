@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :artists, through: :albums
   has_one_attached :photo
   acts_as_voter
+  acts_as_tagger
 
   def self.find_for_spotify_oauth(request)
     # RSpotify::authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])

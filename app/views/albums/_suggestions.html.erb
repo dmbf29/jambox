@@ -1,6 +1,6 @@
 <div class="d-flex scroll-cards">
   <% albums.each do |album| %>
-    <div class="card-product mx-2">
+    <div class="card-product mx-2" data-action="click->album-add#fillForm">
       <%= image_tag album.images&.first['url'] %>
       <div class="card-product-infos">
         <h2><%= album.artists&.first&.name %></h2>
