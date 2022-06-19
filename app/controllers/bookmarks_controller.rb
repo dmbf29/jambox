@@ -8,7 +8,7 @@ class BookmarksController < ApplicationController
       @favs = @bookmarks.order(cached_votes_total: :desc).to_json
       @new_ones = @bookmarks.order(created_at: :desc).to_json
       @throw_backs = @bookmarks.order(cached_votes_total: :asc).to_json
-      @recents = @bookmarks.order(updated_at: :desc).to_json
+      @recents = @bookmarks.where('cached_votes_total >= ?', 1).order(updated_at: :desc).to_json
       @bookmarks = @bookmarks.to_json
     end
   end

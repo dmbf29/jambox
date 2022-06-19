@@ -13,6 +13,7 @@ class AlbumsController < ApplicationController
       @album.upload_photo(params[:album][:photo_url])
       @bookmark = Bookmark.create(user: current_user, album: @album)
       @bookmark.tag_list.add(params[:tags]) if params[:tags].any?
+      redirect_to bookmarks_path
     else
       render 'bookings/new'
     end
