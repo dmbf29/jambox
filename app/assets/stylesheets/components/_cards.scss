@@ -1,0 +1,105 @@
+.card-product {
+  overflow: hidden;
+  background: $purple;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 104px;
+  position: relative;
+}
+
+.bookmark-count {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border-radius: 8px;
+  background-color: $orange;
+  color: $red;
+  padding: 2px 8px;
+  font-size: 0.8em;
+  opacity: 0.9;
+}
+
+.card-product img {
+  width: 104px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-product .card-product-infos {
+  padding: 4px;
+  width: 100%;
+}
+
+.scroll-cards {
+  width: 100%;
+  overflow: scroll;
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+    background: transparent;
+  }
+}
+
+
+
+// Smallest device
+// @media (min-width: 100px) and (max-width: 575px) {
+
+// }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .card-product .card-product-infos {
+    padding: 8px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .card-product {
+    min-width: 200px;
+  }
+  .card-product img {
+    width: 200px;
+  }
+  .card-product h2 {
+    font-size: 14px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .card-product .card-product-infos {
+    padding: 16px;
+  }
+  .card-product h2 {
+    font-size: 16px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }

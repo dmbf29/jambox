@@ -1,0 +1,19 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-bottom fixed-bottom">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <%= link_to bookmarks_path, class: "nav-link nav-link-custom d-flex align-items-center" do %>
+        <i class="fas fa-user link-large"></i>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, class: "nav-link nav-link-custom d-flex align-items-center" do %>
+        <i class="fas fa-user link-large"></i>
+      <% end %>
+    <% end %>
+    <%= link_to bookmarks_path, class: "nav-link nav-link-custom btn-music" do %>
+      <%= image_tag 'icon_no_bg.png', class: 'w-100' %>
+    <% end %>
+    <%= link_to new_bookmark_path, class: "nav-link nav-link-custom d-flex align-items-center" do %>
+      <i class="fas fa-plus-square link-large"></i>
+    <% end %>
+  </div>
+</div>

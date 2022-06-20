@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :bookmarks, only: [:index]
-
+  resources :bookmarks, only: [:index, :new]
+  resources :albums, only: [:create] do
+    collection do
+      get :search
+    end
+  end
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :bookmarks do
@@ -12,4 +16,5 @@ Rails.application.routes.draw do
       end
     end
   end
+  get '/auth/spotify/callback', to: 'users#spotify'
 end
